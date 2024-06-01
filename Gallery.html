@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+body{background-color: rgb(27, 27, 27);background-image: url(football4.jpg);background-repeat: no-repeat;background-size:cover;background-attachment:fixed;background-position:center; }
+    
+    ul{height: 50px;color: white;}
+    ul{display: flex;justify-content: space-evenly;list-style: none;align-items: center;}
+    nav{border-radius: 0px;width: 99%;height: 50px;padding-left: 4px;}
+    nav::before{content: "";position: absolute;z-index: -1;;top: 20px;background-color: rgb(8, 164, 255);border-radius: 10px;height: 100px;width: 98%;animation-name: hassan;animation-duration: 4s;animation-iteration-count: infinite;}
+    @keyframes hassan{ 0%{opacity: 10%;}
+        
+        50%{opacity: 80%;}
+        100%{opacity: 0%;}}
+        
+        
+    
+   
+    li{font-size: 30px;font-weight:bolder;font-family:Arial, Helvetica, sans-serif;}
+    li:hover{font-size:xx-large;transition: all 0.3s;cursor: pointer;text-shadow: 1px 0px 10px rgb(197, 197, 197);}
+
+
+    #main-img{margin-top: 10%;display: flex;justify-content: center;align-items: center;}
+    .thumbnail{border: 1px solid rgb(255, 255, 255);padding: 10px 5px;border-radius: 10px;height: 120px;width: 120px;}
+    #show{height: 600px;width: 600px;border: 2px solid rgb(134, 53, 29);border-radius: 10px;transition: all 1s ease-in-out;}
+   
+    #outer{display: flex;justify-content: center;align-items: center;margin-top: 6%;flex-wrap: wrap;}
+    #main-img h1{position: absolute;z-index: -4;font-weight: 900;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 100px;color: rgb(233, 222, 218);}
+    .thumbnail:hover{scale: 1.1;cursor: pointer;transition: all 0.4s ease-in-out;;}
+    .arrow{height :40px;width: 40px;}
+    #next{position: absolute;top: 65%;left: 70%;scale: 3;}
+    .arrow:hover{scale: 1.3;cursor: pointer;transition: all .5s;}
+    #previous{position: absolute;top: 65%; left: 22%;scale: 3;}
+
+
+
+
+
+
+
+    #display{height: 300px;width: 300px;margin: 16% auto;position: relative;} 
+    
+    .smooth{height: 329px;width: 320px;position: absolute;background-position: center;transition: all 1s ease-in-out;}
+    
+
+#items{box-shadow: 0px 0px 5px 15px skyblue;display: flex;justify-content: center;align-items: center;margin-top: 15%;flex-wrap: wrap;}
+.thumbnail1{height: 150px;width: 150px;padding: 10px 10px;}
+.thumbnail1:hover{scale: 1.1;cursor: pointer;transition: all 0.4s ease-in-out;;}
+
+    </style>
+</head>
+<body>
+
+
+
+    <header> 
+        <div id="bg-img"><img  id="img" src=""></div>
+        <div id="effect"></div>
+        <nav id="nav"> <div id="bar"><ul> 
+          <li id="home_page">HOME</li>
+          <li id="gallery">PICTURES</Picture></li>
+          <li id="gallery2">VIDEOS</li>
+          <li id="Career">CAREERS</li>
+          <li id="contact">CONTACTS</li>
+          <li id="reason">INVITATION</li>
+    
+        </ul></div> 
+    </nav>
+    
+    
+    </header>
+
+        
+<div class="btn"  id="next"> <img class="arrow" src="neon-blue-arrow_5937342right.png" alt=""> </div>
+<div  class="btn" id="previous"> <img class="arrow" src="neon-blue-arrow_5937342left.png" alt=""></div>
+
+
+<section>
+
+
+<div id="outer">  
+
+ 
+
+
+
+  <div> <div id="display"> 
+
+  </div>
+   
+
+</div></div>
+
+
+
+
+<div id="items"> </div>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+<div> <video src=""></video></div>
+
+
+
+
+    
+<script>
+
+
+
+ 
+       
+
+
+document.getElementById("gallery").addEventListener("click",()=>{window.open("Gallery.html")})
+
+
+
+document.getElementById("Career").addEventListener("click",()=>{window.open("Career.html")})
+
+
+
+document.getElementById("home_page").addEventListener("click",()=>{window.open("project.html")})
+
+    
+document.getElementById("gallery2").addEventListener("click",()=>{window.open("Videos Gallery.html")})
+
+document.getElementById("contact").addEventListener("click",()=>{window.open("Contact.html")})
+
+document.getElementById("reason").addEventListener("click",()=>{window.open("Reason.html")})
+ 
+let ind1=0;
+
+      
+      let arr=[{thumbnail:"herman1.jpg"},{thumbnail:"herman2.jpg"},{thumbnail:"herman3.jpg"},{thumbnail:"herman4.jpg"},{thumbnail:"herman5.jpg"},{thumbnail:"herman6.jpg"},{thumbnail:"herman7.jpg"},{thumbnail:"herman8.jpg"},]
+      let clutter=""
+        arr.forEach((x,i)=>{clutter=clutter+`<img id="${i}" src="${x.thumbnail}" alt="" class="smooth">`})
+        document.getElementById("display").innerHTML=clutter
+        console.log(clutter);
+        document.querySelectorAll(".smooth").forEach((x,index)=>{x.style.left=`${index*100}%`;
+          
+        ;document.getElementById("display").style.boxShadow=`0px 0px 20px 10px skyblue `; if (ind1==index) {
+      
+      x.style.scale="1.1";x.style.boxShadow="0px 0px 10px 10px skyblue";x.style.zIndex="3"} else{x.style.scale=`1`}  } ) 
+
+        
+
+
+    
+
+
+
+
+
+        console.log(arr); 
+       
+    function slide() { document.querySelectorAll(".smooth").forEach((y,index2)=>{ if (ind1==index2) {
+      
+    y.style.transform=`translateX(${-ind1*100}%)scale(1.2) `;y.style.zIndex=10;y.style.boxShadow=`0px 0px 20px 10px skyblue` }else{y.style.transform=`translateX(${-ind1*100}%)scale(1) `;y.style.zIndex=-5;y.style.boxShadow=``}; }  )};
+
+
+ 
+
+
+        document.getElementById("next").addEventListener("click", () => {document.getElementById("display").style.boxShadow=``;
+  if (ind1 <arr.length-1) {
+    ind1++; slide();
+
+
+  } else {
+    ind1 = 0; slide()
+  }
+});
+
+
+ document.getElementById("previous").addEventListener("click",()=>{ 
+                if (ind1 >0) {ind1--;slide();
+                    
+                }
+            else{ind1=arr.length-1;document.querySelectorAll(".smooth").forEach((z)=>{z.style.transform=`translateX(${-ind1*100}%)`})}
+            })
+
+
+            let clutter1 = "";
+arr.forEach((a, it) => {
+  clutter1 += `<img id="${it}" class="thumbnail1" src="${a.thumbnail}" alt="">`;
+});
+document.getElementById("items").innerHTML = clutter1;
+
+
+
+document.querySelectorAll(".thumbnail1").forEach((thumb) => {
+  thumb.addEventListener("click", (e) => {ind1=e.target.id;slide()
+    
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+//       console.log(arr);
+//       let clutter=""
+//         arr.forEach((z,i)=>{clutter=clutter+`<img id=${i} class="thumbnail"src="${z.thumbnail}" alt="">`});document.getElementById("outer").innerHTML=clutter
+//        document.querySelectorAll(".thumbnail").forEach((thumb)=>{thumb.addEventListener("click",(e)=>{document.getElementById("show").src=`${arr[e.target.id].display}` ;        let ind1 = 0; // Ensure ind1 is defined outside the event listener
+// document.getElementById("btn").addEventListener("click", () => {
+//   if (ind1 <= arr.length-1) {console.log(ind1);
+//     document.getElementById("show").src = arr[ind1].display;
+//     ind1++;;
+//   } else {
+//     ind1 = 0;
+//     document.getElementById("show").src = arr[ind1].display;console.log(ind1);ind1++
+//   }
+// });})})
+       
+
+
+ 
+    </script>
+</body>
+</html> z

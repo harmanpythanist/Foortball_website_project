@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+body{background-color: rgb(27, 27, 27);background-image: url(footballsun.jpg);background-repeat: no-repeat;background-size:cover;background-attachment:fixed;background-position:center; }
+    
+    ul{height: 50px;color: rgb(255, 255, 255);margin-top: 17px;}
+    ul{display: flex;justify-content: space-evenly;list-style: none;align-items: center;}
+    nav{border-radius: 0px;width: 100%;height: 50px;}
+    nav::before{content: "";position: absolute;z-index: -1;top: 20px;left: 0px;background-color: rgb(255, 148, 27);border-radius: 10px;height: 100px;width: 100%;animation-name: hassan;animation-duration: 4s;animation-iteration-count: infinite;}
+    @keyframes hassan{ 0%{opacity: 10%;}
+        
+        50%{opacity: 80%;}
+        100%{opacity: 0%;}}
+        
+         
+        
+    
+    
+
+    
+    li{font-size: 30px;font-weight:bolder;font-family:Arial, Helvetica, sans-serif;}
+    li:hover{font-size: xx-large;transition: all 0.3s;cursor: pointer;text-shadow: 1px 0px 10px rgb(197, 197, 197);}
+
+
+    #main-img{margin-top: 7%;display: flex;justify-content: center;align-items: center;}
+    .thumbnail{border: 1px solid rgb(255, 255, 255);padding: 0px 0px;border-radius: 10px;height: 120px;width: 120px;}
+    #show{height: 900px;width: 900px;border-radius: 10px;transition: all 1s ease-in-out;}
+   
+    #outer{display: flex;justify-content: center;align-items: center;margin-top: 1%;flex-wrap: wrap;}
+    #main-img h1{position: absolute;z-index: -4;font-weight: 900;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 100px;color: rgb(233, 222, 218);}
+    .thumbnail:hover{scale: 1.1;cursor: pointer;transition: all 0.4s ease-in-out;box-shadow: 0px 0px 10px rgb(177, 55, 33);}
+    .arrow{height :40px;width: 40px;}
+    #next{position: absolute;top: 60%;left: 80%;scale: 2;}
+    .arrow:hover{scale: 1.3;transition: all 0.3s ease-in-out;cursor: pointer;}
+    #previous{position: absolute;top: 60%; left: 17%;scale: 2;}
+
+
+
+
+
+
+
+
+    #display{height: 300px;width: 400px;margin: 5% auto;position: relative;border: 3px solid yellow;} 
+    
+    .smooth{height: 500px;width: 500px;position: absolute;background-position: center;transition: all 1s ease-in-out;}
+    
+
+
+.thumbnail1{height: 150px;width: 150px;padding: 10px 10px;transition: all 0.3s ease-in-out;margin-top: 5%;}
+.thumbnail1:hover{border: 1px solid rgb(160, 51, 24);scale: 1.1;cursor: pointer;transition: all 0.4s ease-in-out;box-shadow: 0px 0px 10px rgb(177, 55, 33);box-shadow: 0px 0px 10px rgb(248, 141, 2);}
+
+    </style>
+</head>
+<body>
+
+
+
+  <header> 
+    <div id="bg-img"><img  id="img" src=""></div>
+    <div id="effect"></div>
+    <nav id="nav"> <div id="bar"><ul> 
+      <li id="home_page">HOME</li>
+      <li id="gallery">PICTURES</Picture></li>
+      <li id="gallery2">VIDEOS</li>
+      <li id="Career">CAREERS</li>
+      <li id="contact">CONTACTS</li>
+      <li id="reason">INVITATION</li>
+    
+    </ul></div> 
+</nav>
+
+
+</header>
+        
+
+
+<section>
+
+ 
+   
+
+</div></div>
+
+<section>
+
+  <div id="main-img"><video controls autoplay id="show" src="" class=""  alt=""> </video><h1> GALLERY</h1></div>
+</div>
+<div class="btn"  id="next"> <img class="arrow" src="right-arrow.png" alt=""> </div>
+<div  class="btn" id="previous"> <img class="arrow" src="leftarrow.png" alt=""></div>
+<div id="outer">  
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<div id="outer">  
+
+ 
+  <div>
+
+
+
+
+
+
+
+</section>
+
+
+
+    
+<script>
+
+
+document.getElementById("gallery").addEventListener("click",()=>{window.open("Gallery.html")})
+
+
+
+document.getElementById("Career").addEventListener("click",()=>{window.open("Career.html")})
+
+
+
+document.getElementById("home_page").addEventListener("click",()=>{window.open("project.html")})
+
+    
+document.getElementById("gallery2").addEventListener("click",()=>{window.open("Videos Gallery.html")})
+   
+document.getElementById("contact").addEventListener("click",()=>{window.open("Contact.html")})
+
+document.getElementById("reason").addEventListener("click",()=>{window.open("Reason.html")})
+
+
+
+
+         
+let arr=[{thumbnai:"footballvid.mp4"},{thumbnai:"TREASURES IN DARKNESS a TD Jakes Inspirational and Motivational Video 2020.mp4"},{thumbnai:"footballvid2.mp4"}]
+
+    
+
+
+ let ind1 = 0;
+let clutter = "";
+arr.forEach((z, i) => {
+  clutter += `<video controls muted autoplay id="${i}" class="thumbnail1"  alt="">  <source src="${z.thumbnai }" ></video>`;
+});
+document.getElementById("outer").innerHTML = clutter;
+
+
+  document.querySelectorAll(".thumbnail1").forEach((k,ii)=>{if (ind1==ii) {
+
+    k.style.boxShadow=`0px 0px 10px rgb(248, 141, 2)`;
+  }
+else{   k.style.boxShadow=``}
+})
+
+
+function highlight() {document.querySelectorAll(".thumbnail1").forEach((k,ii)=>{if (ind1==ii) {
+
+k.style.boxShadow=`0px 0px 10px rgb(248, 141, 2)`;k.style.scale="1.1"
+}
+else{   k.style.boxShadow=``;k.style.scale="1"}
+})
+  
+} 
+
+function downlight() {document.querySelectorAll(".thumbnail1").forEach((p,ii)=>{
+
+p.style.boxShadow=``;p.style.scale=""
+
+
+  
+} )}
+
+
+let v=
+
+document.getElementById("next").addEventListener("click", () => {console.log("adsa");
+  if (ind1 <arr.length-1) {
+    
+   ind1++; document.getElementById("show").src = arr[ind1].thumbnai;
+    console.log(ind1);
+  } else {
+    ind1 = 0;
+    document.getElementById("show").src = arr[ind1].thumbnai;
+    console.log(ind1);
+    ;
+  };highlight();v=highlight()
+});
+
+document.getElementById("previous").addEventListener("click", () => {
+  if (ind1 >0) {
+    
+   ind1--; document.getElementById("show").src = arr[ind1].thumbnai;
+    console.log(ind1);
+  } else {
+    ind1 = arr.length-1;
+    document.getElementById("show").src = arr[ind1].thumbnai;
+    console.log(ind1);
+    ;
+  };highlight();v=highlight()
+});
+
+
+document.querySelectorAll(".thumbnail1").forEach((thumb,in2) => {
+  thumb.addEventListener("click", (e) => {ind1=e.target.id
+    document.getElementById("show").src = arr[e.target.id].thumbnai;console.log(ind1);if (in2==ind1) {
+      
+    thumb.style.boxShadow=`0px 0px 20px 10px skyblue`} else{boxShadow=``};v=downlight();highlight()
+  });
+});
+
+
+ 
+    </script>
+</body>
+</html> z
